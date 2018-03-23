@@ -1,0 +1,24 @@
+CREATE TABLE SALARIES(
+id int NOT NULL PRIMARY KEY,
+Salary varchar2(255) NOT NULL,
+CONSTRAINT FK_Employees FOREIGN KEY (ID) REFERENCES Employees(ID),
+CONSTRAINT FK_Projects FOREIGN KEY(ID) REFERENCES Projects(ID)
+);
+
+CREATE TABLE Employees(
+id int PRIMARY KEY NOT NULL,
+full_name varchar2(255) NOT NULL,
+manager_id varchar2(255) NOT NULL,
+date_of_joining date NOT NULL
+);
+
+
+CREATE TABLE Projects(
+id int PRIMARY KEY NOT NULL,
+code varchar2(255) NOT NULL,
+manager_id varchar2(255) NOT NULL,
+budget varchar2(255) NOT NULL,
+date_of_beginning date NOT NULL,
+date_of_ending date NOT NULL
+);
+
